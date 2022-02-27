@@ -1,0 +1,48 @@
+#### GRAPHQL NEDİR ? ####
+* GraphQL, Facebook tarafından geliştirilmiş, REST’e daha verimli, etkili ve esnek bir alternatif sunan yeni API standartıdır.
+* GraphQL bir API sorgulama dilidir, veritabanı değildir!
+* GraphQL kullanımında, kullanılacak API’nin tüm verilerini almak yerine, API’den gelecek verileri analiz ederek yalnızca
+ihtiyacımız olan kadarına özelleştirip bu şekilde kullanmamızı sağlayacak bir yapı oluşturmuş oluruz.
+Bu da veri kullanımında azalma, uygulamanın performansında artış, ön uç ve platformun çeşitliliğinden kaynaklanan karmaşıklığı
+önlemek ve hızlı geliştirme konusunda yardımcı olmaktadır
+
+
+############# uygulama hakkında ###############
+
+http://localhost:8095/graphiql  => uygulamanın graphql adresi
+
+mutation {
+    createVehicle(vehicle:{
+        type : "test",
+        modelCode : "testmodel",
+        brandName : "testbrand"
+    }) {
+        id,
+        launchDate,
+        brandName
+    }
+}
+
+
+query {
+  getById(id :1) {
+    id,
+    type,
+    modelCode,
+    brandName,
+    launchDate
+  }
+}
+
+
+query {
+  getVehicles(type :"te%") {
+    id,
+    type,
+    modelCode,
+    brandName,
+    launchDate
+  }
+}
+
+
